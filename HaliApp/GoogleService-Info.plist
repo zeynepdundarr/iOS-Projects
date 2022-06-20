@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ZeynepDundar.HaliApp</string>
+	<string>Zeynep-Dundar.HaliApp</string>
 	<key>PROJECT_ID</key>
 	<string>haliapp-a1ab6</string>
 	<key>STORAGE_BUCKET</key>
 	<string>haliapp-a1ab6.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:605138335223:ios:41cef33e40e2d7fb1b2af2</string>
 </dict>

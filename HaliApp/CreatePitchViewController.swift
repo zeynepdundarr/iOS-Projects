@@ -1,41 +1,36 @@
 //
-//  CreateEventViewController.swift
+//  CreatePitchViewController.swift
 //  HaliApp
 //
-//  Created by Zeynep Dundar on 17.06.2022.
-//
-
+//  Created by Zeynep Dundar on 19.06.2022.
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
+import UIKit
 
-class CreateEventViewController: UIViewController{
+class CreatePitchViewController: UIViewController {
     
-    var ds = DataSource()
-    var event: Event?
     var db: Firestore!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //saveEvent()
-       
-        ds.delegate = self
-        ds.getEventData()
-        
+        savePitch()
+ 
     }
     
-// save an evet to database
-    
-    func saveEvent(){
+    func savePitch(){
         
         db = Firestore.firestore()
         print("db.description: \(db.description)")
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db.collection("events").addDocument(data: [
-            "name": "Event #3",
-            "hour": "18:00 - 19:00",
-            "pitch_name": "Moda Stadyumu"
+        ref = db.collection("pitches").addDocument(data: [
+            "pitch_name": "Yusuf Ziya Öniş",
+            "pitch_owner_name" : "Ahmet Yılmaz",
+            "available_hours": "18:00 - 19:00",
+            "price": 300,
+            "address" : "Sariyer - Istanbul",
+            
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -44,6 +39,7 @@ class CreateEventViewController: UIViewController{
             }
         }
     }
+    
     /*
     // MARK: - Navigation
 
@@ -55,14 +51,3 @@ class CreateEventViewController: UIViewController{
     */
 
 }
-
-
-extension CreateEventViewController: EventDataSourceDelagate{
-    func eventLoaded(event: Event?) {
-        print("View Controller - event List in Loaded")
-        self.event = event
-        print("event: \(self.event!)")
-    }
-
-}
-

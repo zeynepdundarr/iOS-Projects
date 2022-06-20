@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D4255D28606A02002E45A4 /* EventListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4255C28606A02002E45A4 /* EventListTableViewController.swift */; };
+		21D4255F28607A98002E45A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4255E28607A98002E45A4 /* Event.swift */; };
+		21D4256128607CFE002E45A4 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4256028607CFE002E45A4 /* DataSource.swift */; };
+		21D42563286090AB002E45A4 /* EventDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D42562286090AB002E45A4 /* EventDataSourceDelegate.swift */; };
 		21E596A0285B45D2003D24C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E5969F285B45D2003D24C9 /* AppDelegate.swift */; };
 		21E596A2285B45D2003D24C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596A1285B45D2003D24C9 /* SceneDelegate.swift */; };
 		21E596A4285B45D2003D24C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596A3285B45D2003D24C9 /* ViewController.swift */; };
@@ -16,6 +20,19 @@
 		21E596B7285B45D4003D24C9 /* HaliAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596B6285B45D4003D24C9 /* HaliAppTests.swift */; };
 		21E596C1285B45D4003D24C9 /* HaliAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596C0285B45D4003D24C9 /* HaliAppUITests.swift */; };
 		21E596C3285B45D4003D24C9 /* HaliAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596C2285B45D4003D24C9 /* HaliAppUITestsLaunchTests.swift */; };
+		21E596D4285B5804003D24C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21E596D3285B5803003D24C9 /* GoogleService-Info.plist */; };
+		21E596D6285C96C8003D24C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596D5285C96C7003D24C9 /* LoginViewController.swift */; };
+		21E596D8285C96D6003D24C9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596D7285C96D6003D24C9 /* SignupViewController.swift */; };
+		21E596DC285C9F91003D24C9 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E596DB285C9F91003D24C9 /* CreateEventViewController.swift */; };
+		21E59716285CC3FB003D24C9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 21E59715285CC3FB003D24C9 /* FirebaseAuth */; };
+		21E59718285CC3FB003D24C9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 21E59717285CC3FB003D24C9 /* FirebaseDatabase */; };
+		21E5971A285CC3FB003D24C9 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21E59719285CC3FB003D24C9 /* FirebaseDatabaseSwift */; };
+		21E5971C285CC3FB003D24C9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 21E5971B285CC3FB003D24C9 /* FirebaseFirestore */; };
+		21E5971E285CC3FB003D24C9 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 21E5971D285CC3FB003D24C9 /* FirebaseFirestoreCombine-Community */; };
+		21E59720285CC3FB003D24C9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21E5971F285CC3FB003D24C9 /* FirebaseFirestoreSwift */; };
+		21E59722285CC3FB003D24C9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21E59721285CC3FB003D24C9 /* FirebaseStorage */; };
+		21E59724285F502C003D24C9 /* CreatePitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E59723285F502C003D24C9 /* CreatePitchViewController.swift */; };
+		21E59726285F5261003D24C9 /* PitchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E59725285F5261003D24C9 /* PitchListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21D4255C28606A02002E45A4 /* EventListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewController.swift; sourceTree = "<group>"; };
+		21D4255E28607A98002E45A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		21D4256028607CFE002E45A4 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		21D42562286090AB002E45A4 /* EventDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataSourceDelegate.swift; sourceTree = "<group>"; };
 		21E5969C285B45D2003D24C9 /* HaliApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaliApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E5969F285B45D2003D24C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E596A1285B45D2003D24C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +70,12 @@
 		21E596BC285B45D4003D24C9 /* HaliAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaliAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E596C0285B45D4003D24C9 /* HaliAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaliAppUITests.swift; sourceTree = "<group>"; };
 		21E596C2285B45D4003D24C9 /* HaliAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaliAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21E596D3285B5803003D24C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21E596D5285C96C7003D24C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		21E596D7285C96D6003D24C9 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		21E596DB285C9F91003D24C9 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		21E59723285F502C003D24C9 /* CreatePitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePitchViewController.swift; sourceTree = "<group>"; };
+		21E59725285F5261003D24C9 /* PitchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +83,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E5971A285CC3FB003D24C9 /* FirebaseDatabaseSwift in Frameworks */,
+				21E5971C285CC3FB003D24C9 /* FirebaseFirestore in Frameworks */,
+				21E59718285CC3FB003D24C9 /* FirebaseDatabase in Frameworks */,
+				21E5971E285CC3FB003D24C9 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				21E59722285CC3FB003D24C9 /* FirebaseStorage in Frameworks */,
+				21E59716285CC3FB003D24C9 /* FirebaseAuth in Frameworks */,
+				21E59720285CC3FB003D24C9 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +117,7 @@
 				21E596B5285B45D4003D24C9 /* HaliAppTests */,
 				21E596BF285B45D4003D24C9 /* HaliAppUITests */,
 				21E5969D285B45D2003D24C9 /* Products */,
+				21E596CF285B48E7003D24C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +134,23 @@
 		21E5969E285B45D2003D24C9 /* HaliApp */ = {
 			isa = PBXGroup;
 			children = (
+				21E596D3285B5803003D24C9 /* GoogleService-Info.plist */,
 				21E5969F285B45D2003D24C9 /* AppDelegate.swift */,
 				21E596A1285B45D2003D24C9 /* SceneDelegate.swift */,
 				21E596A3285B45D2003D24C9 /* ViewController.swift */,
 				21E596A5285B45D2003D24C9 /* Main.storyboard */,
+				21D4255C28606A02002E45A4 /* EventListTableViewController.swift */,
 				21E596A8285B45D4003D24C9 /* Assets.xcassets */,
 				21E596AA285B45D4003D24C9 /* LaunchScreen.storyboard */,
 				21E596AD285B45D4003D24C9 /* Info.plist */,
+				21E596D5285C96C7003D24C9 /* LoginViewController.swift */,
+				21E596D7285C96D6003D24C9 /* SignupViewController.swift */,
+				21E596DB285C9F91003D24C9 /* CreateEventViewController.swift */,
+				21E59723285F502C003D24C9 /* CreatePitchViewController.swift */,
+				21E59725285F5261003D24C9 /* PitchListViewController.swift */,
+				21D4255E28607A98002E45A4 /* Event.swift */,
+				21D4256028607CFE002E45A4 /* DataSource.swift */,
+				21D42562286090AB002E45A4 /* EventDataSourceDelegate.swift */,
 			);
 			path = HaliApp;
 			sourceTree = "<group>";
@@ -127,6 +172,13 @@
 			path = HaliAppUITests;
 			sourceTree = "<group>";
 		};
+		21E596CF285B48E7003D24C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +195,15 @@
 			dependencies = (
 			);
 			name = HaliApp;
+			packageProductDependencies = (
+				21E59715285CC3FB003D24C9 /* FirebaseAuth */,
+				21E59717285CC3FB003D24C9 /* FirebaseDatabase */,
+				21E59719285CC3FB003D24C9 /* FirebaseDatabaseSwift */,
+				21E5971B285CC3FB003D24C9 /* FirebaseFirestore */,
+				21E5971D285CC3FB003D24C9 /* FirebaseFirestoreCombine-Community */,
+				21E5971F285CC3FB003D24C9 /* FirebaseFirestoreSwift */,
+				21E59721285CC3FB003D24C9 /* FirebaseStorage */,
+			);
 			productName = HaliApp;
 			productReference = 21E5969C285B45D2003D24C9 /* HaliApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 21E59693285B45D2003D24C9;
+			packageReferences = (
+				21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 21E5969D285B45D2003D24C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E596AC285B45D4003D24C9 /* LaunchScreen.storyboard in Resources */,
+				21E596D4285B5804003D24C9 /* GoogleService-Info.plist in Resources */,
 				21E596A9285B45D4003D24C9 /* Assets.xcassets in Resources */,
 				21E596A7285B45D2003D24C9 /* Main.storyboard in Resources */,
 			);
@@ -258,8 +323,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E596D6285C96C8003D24C9 /* LoginViewController.swift in Sources */,
 				21E596A4285B45D2003D24C9 /* ViewController.swift in Sources */,
+				21D4255D28606A02002E45A4 /* EventListTableViewController.swift in Sources */,
+				21E596DC285C9F91003D24C9 /* CreateEventViewController.swift in Sources */,
+				21D4255F28607A98002E45A4 /* Event.swift in Sources */,
+				21E596D8285C96D6003D24C9 /* SignupViewController.swift in Sources */,
+				21E59724285F502C003D24C9 /* CreatePitchViewController.swift in Sources */,
 				21E596A0285B45D2003D24C9 /* AppDelegate.swift in Sources */,
+				21D42563286090AB002E45A4 /* EventDataSourceDelegate.swift in Sources */,
+				21E59726285F5261003D24C9 /* PitchListViewController.swift in Sources */,
+				21D4256128607CFE002E45A4 /* DataSource.swift in Sources */,
 				21E596A2285B45D2003D24C9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YY3QH4MNYJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HaliApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,6 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YY3QH4MNYJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HaliApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -598,6 +674,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21E59715285CC3FB003D24C9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		21E59717285CC3FB003D24C9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		21E59719285CC3FB003D24C9 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		21E5971B285CC3FB003D24C9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		21E5971D285CC3FB003D24C9 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		21E5971F285CC3FB003D24C9 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		21E59721285CC3FB003D24C9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21E59714285CC3FB003D24C9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 21E59694285B45D2003D24C9 /* Project object */;
 }

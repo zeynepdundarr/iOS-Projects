@@ -6,15 +6,35 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let email = "ealtintas17@ku.edu.tr"
+        let password = "Hoppala1998"
+        signup(email: email, password: password)
     }
     
+
+    func signup(email:String, password: String) {
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            
+          guard let strongSelf = self else {
+            return
+              
+          }
+            guard error == nil else {
+                print("Error in Signup!")
+                // TODO: enter signup button
+                return
+            }
+            print("Error in Login!")
+        }
+    }
+
+  
 
     /*
     // MARK: - Navigation
