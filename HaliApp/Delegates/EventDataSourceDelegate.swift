@@ -8,6 +8,7 @@
 import Foundation
 
 protocol EventDataSourceDelagate{
-    func eventLoaded(event:Event?)
+    func eventListLoaded(eventArr:[Event?])
+    func eventLoaded(event: Event?)
 }
 

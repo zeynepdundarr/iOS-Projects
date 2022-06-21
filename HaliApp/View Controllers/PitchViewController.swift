@@ -9,7 +9,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import UIKit
 
-class CreatePitchViewController: UIViewController {
+class PitchViewController: UIViewController {
     
     var db: Firestore!
     override func viewDidLoad() {

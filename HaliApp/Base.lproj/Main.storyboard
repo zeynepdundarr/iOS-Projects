@@ -23,30 +23,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0t-5U-Qfz">
-                                <rect key="frame" x="68" y="593" width="234" height="31"/>
+                                <rect key="frame" x="68" y="654" width="234" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LOGIN"/>
                                 <connections>
                                     <segue destination="YsU-Fl-ffD" kind="show" id="fat-p5-9Sw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVx-aG-hj8">
-                                <rect key="frame" x="81" y="641" width="209" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="SIGNUP"/>
-                                <connections>
-                                    <segue destination="in8-bJ-3Sk" kind="show" id="0gg-bF-rLC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmb-Yx-C9F">
-                                <rect key="frame" x="45" y="719" width="281" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create Pitches"/>
-                                <connections>
-                                    <segue destination="2Uq-nI-Qck" kind="show" id="fiL-Bm-poZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mb-qG-D2H">
@@ -55,25 +37,25 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="EVENTS HOME PAGE"/>
                                 <connections>
-                                    <segue destination="Cbn-ds-Fk9" kind="show" id="ueK-Wr-aOw"/>
+                                    <segue destination="Bzk-4G-G8y" kind="show" id="Jt1-NY-CBc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDB-ce-Ow0">
-                                <rect key="frame" x="45" y="680" width="281" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ES-4B-WB9">
+                                <rect key="frame" x="30" y="604" width="310" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Create Event"/>
+                                <buttonConfiguration key="configuration" style="plain" title="PITCHES HOME PAGE"/>
                                 <connections>
-                                    <segue destination="Cbn-ds-Fk9" kind="show" id="pgO-l8-6dq"/>
+                                    <segue destination="NnD-tg-VPn" kind="show" id="QtC-CW-ZeP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1c-WE-NBc">
-                                <rect key="frame" x="130" y="758" width="111" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVx-aG-hj8">
+                                <rect key="frame" x="81" y="708" width="209" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Show Pitches"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SIGNUP"/>
                                 <connections>
-                                    <segue destination="gyu-e7-Ly2" kind="show" id="UwU-i6-JKB"/>
+                                    <segue destination="in8-bJ-3Sk" kind="show" id="0gg-bF-rLC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,9 +87,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="SIGNUP SUCCESSFUL"/>
-                                <connections>
-                                    <segue destination="Cbn-ds-Fk9" kind="show" id="2lH-Ue-OUY"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xgQ-LI-1cO"/>
@@ -119,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="1897.1014492753625" y="457.36607142857139"/>
         </scene>
-        <!--Create Pitch View Controller-->
+        <!--Pitch View Controller-->
         <scene sceneID="SRG-m4-qaM">
             <objects>
-                <viewController id="2Uq-nI-Qck" customClass="CreatePitchViewController" customModule="HaliApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Uq-nI-Qck" customClass="PitchViewController" customModule="HaliApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bbg-4t-y8e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +130,38 @@
             </objects>
             <point key="canvasLocation" x="1882" y="1217"/>
         </scene>
+        <!--Pitch List Table View Controller-->
+        <scene sceneID="tf4-Bf-dBl">
+            <objects>
+                <tableViewController id="NnD-tg-VPn" customClass="PitchListTableViewController" customModule="HaliApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Uo8-5e-hoq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PitchCell" id="0MZ-7c-m2c">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0MZ-7c-m2c" id="V4e-TX-naT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NnD-tg-VPn" id="Cdy-AY-IC9"/>
+                            <outlet property="delegate" destination="NnD-tg-VPn" id="fWx-sn-K4s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="IOe-OL-ujr"/>
+                    <connections>
+                        <outlet property="pitchListTableViewController" destination="Uo8-5e-hoq" id="n98-do-AiY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJg-sg-Ej1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="840"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="ELZ-bb-7ku">
             <objects>
@@ -170,9 +181,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="LOGIN SUCCESSFUL"/>
-                                <connections>
-                                    <segue destination="Cbn-ds-Fk9" kind="show" id="1XN-Cj-h1S"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dLh-Xx-uAf"/>
@@ -184,42 +192,6 @@
             </objects>
             <point key="canvasLocation" x="1897.1014492753625" y="-277.23214285714283"/>
         </scene>
-        <!--Create Event View Controller-->
-        <scene sceneID="Mrd-CP-vYv">
-            <objects>
-                <viewController id="Cbn-ds-Fk9" customClass="CreateEventViewController" customModule="HaliApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eYz-TU-3kZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsu-eS-5cv">
-                                <rect key="frame" x="134" y="543" width="144" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title=" event to database">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    <color key="baseBackgroundColor" red="0.63211465659999999" green="0.83119057070000002" blue="0.77968262759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="Bzk-4G-G8y" kind="show" id="QwT-Vd-drL"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="EVENTS HOME" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12A-Un-yRy">
-                                <rect key="frame" x="143" y="431" width="127" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="TuJ-Q3-Ydc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="QqR-a1-iV1"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CnS-D0-fLZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2868.115942028986" y="79.6875"/>
-        </scene>
         <!--Event List Table View Controller-->
         <scene sceneID="dS0-os-sPH">
             <objects>
@@ -228,21 +200,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" textLabel="tzK-df-X88" style="IBUITableViewCellStyleDefault" id="VTs-YW-hVN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="tIK-b2-Pwp" customClass="EventDetailTableViewCell" customModule="HaliApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VTs-YW-hVN" id="aen-0q-OP9">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIK-b2-Pwp" id="dni-2Z-0IO">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tzK-df-X88">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNu-3h-Zrt">
+                                            <rect key="frame" x="278" y="6" width="67" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="eventCellClicked:" destination="Bzk-4G-G8y" eventType="touchUpInside" id="LXY-lW-Kza"/>
+                                                <segue destination="sul-Ad-9v2" kind="show" identifier="eventDetailSegue" id="aDF-8F-XxK"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NNu-3h-Zrt" firstAttribute="centerY" secondItem="dni-2Z-0IO" secondAttribute="centerY" id="7uX-vV-hZR"/>
+                                        <constraint firstItem="NNu-3h-Zrt" firstAttribute="centerX" secondItem="dni-2Z-0IO" secondAttribute="centerX" id="EGm-S7-bwd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -253,10 +231,44 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="j1G-17-KEs"/>
+                    <connections>
+                        <outlet property="eventListTableViewController" destination="7K7-oH-vrn" id="84g-LM-WQP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDm-7k-9Nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3877" y="80"/>
+            <point key="canvasLocation" x="2898.5507246376815" y="58.928571428571423"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="QA4-wz-HyB">
+            <objects>
+                <viewController id="sul-Ad-9v2" customClass="EventDetailViewController" customModule="HaliApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5h0-qa-K4D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csI-pv-1ie">
+                                <rect key="frame" x="186.5" y="465" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="okF-6v-rSI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="csI-pv-1ie" firstAttribute="centerY" secondItem="okF-6v-rSI" secondAttribute="centerY" id="OXH-YM-TX9"/>
+                            <constraint firstItem="csI-pv-1ie" firstAttribute="centerX" secondItem="okF-6v-rSI" secondAttribute="centerX" id="cYQ-jt-XMJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="faA-uM-5iU"/>
+                    <connections>
+                        <outlet property="eventName" destination="csI-pv-1ie" id="Jrv-J2-8OL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJx-xi-hEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3744.9275362318845" y="446.65178571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mFr-Wx-i3Q">
@@ -277,13 +289,7 @@
             <point key="canvasLocation" x="-1.4492753623188408" y="79.6875"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pgO-l8-6dq"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

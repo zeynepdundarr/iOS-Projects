@@ -6,13 +6,28 @@
 //
 
 import UIKit
+import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import FirebaseAuth
 
-class EventListTableViewController: UITableViewController{
+class EventListTableViewController: UITableViewController, EventDataSourceDelagate{
 
-    var eventArr : [Event] = []
+    var eventArr : [Event?] = []
+    var ds = EventDataSource()
+    var event: Event?
+    var db: Firestore!
     
+    @IBOutlet var eventListTableViewController: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ds.delegate = self
+        //ds.saveEventData()
+        ds.getEventData()
+        
+        // Event #2
+        ds.getEventDataWithID(documentId: "DloGuxBbiGzTzUiIivcf")
    
         
         // Uncomment the following line to preserve selection between presentations
@@ -36,16 +51,43 @@ class EventListTableViewController: UITableViewController{
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
 
-        cell.textLabel?.text = self.eventArr[indexPath.row].pitch_name
+        cell.textLabel?.text = self.eventArr[indexPath.row]!.pitch_name
 
         return cell
     }
     
+    //delegate methods
+    func eventListLoaded(eventArr: [Event?]) {
+        print("View Controller - event List in Loaded")
+        self.eventArr = eventArr
+        print("eventArr: \(self.eventArr)")
+        self.eventListTableViewController.reloadData()
+    }
     
-  
-
+    func eventLoaded(event: Event?){
+        self.event = event
+        print("HEYO event Loaded")
+        print("event: \(self.event)")
+    }
+    
+    // performSegue(withIdentifier: "DetailSegue", sender: nil)
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // segue başlamadan önce çalışacak fonksiyon
+        if segue.identifier == "eventDetailSegue"{
+            let detailViewController = segue.destination as! EventDetailViewController
+            detailViewController.event = self.event
+            
+        }}
+        
+    
+    
+    @IBAction func eventCellClicked(_ sender: Any) {
+            performSegue(withIdentifier: "eventDetailSegue", sender: nil)
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -94,3 +136,5 @@ class EventListTableViewController: UITableViewController{
 }
 
 // delegate methods
+
+    
