@@ -11,10 +11,12 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 
-class EventListTableViewController: UITableViewController, EventDataSourceDelagate{
+class EventListTableViewController: UITableViewController, EventDataSourceDelegate{
+
 
     var eventArr : [Event?] = []
     var ds = EventDataSource()
+    var eb = EventBrain()
     var event: Event?
     var db: Firestore!
     
@@ -22,19 +24,26 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelaga
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ds.delegate = self
-        //ds.saveEventData()
-        ds.getEventData()
-        
-        // Event #2
-        ds.getEventDataWithID(documentId: "DloGuxBbiGzTzUiIivcf")
-   
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        var eventData :  [String: [Event]] =
+        ["data":
+            [Event(name:"Event #1",
+                  hour: "17:00 - 18:00",
+                  pitch_name: "Moda Stadyumu",
+                  attendee_list: ["Ahmet Yilmaz", "Mehmet Yilmaz", "Cem Yilmaz"],
+                  player_quota_left: 11),
+             Event(name:"Event #2",
+                   hour: "17:00 - 18:00",
+                   pitch_name: "Kadikoy Stadyumu",
+                   attendee_list: ["Ceren Aksu"],
+                   player_quota_left: 11)]
+            ]
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        ds.delegate = self
+        Globals.currentUser = "Dilek Dundar"
+        //ds.saveEventData(event: eventData["data"]![0])
+        ds.getEventData()
+      
+   
     }
 
     // MARK: - Table view data source
@@ -52,24 +61,30 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelaga
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
-
-        cell.textLabel?.text = self.eventArr[indexPath.row]!.pitch_name
+        cell.textLabel?.text = self.eventArr[indexPath.row]!.name
+        self.event = self.eventArr[indexPath.row]!
 
         return cell
     }
     
     //delegate methods
     func eventListLoaded(eventArr: [Event?]) {
-        print("View Controller - event List in Loaded")
         self.eventArr = eventArr
-        print("eventArr: \(self.eventArr)")
         self.eventListTableViewController.reloadData()
     }
     
     func eventLoaded(event: Event?){
+        print("Hello Table view delegate is called!")
         self.event = event
-        print("HEYO event Loaded")
-        print("event: \(self.event)")
+
+    }
+    
+    func eventUpdated(documentID: String?) {
+        
+    }
+    
+    func eventLoadedDetail(event: Event?) {
+        
     }
     
     // performSegue(withIdentifier: "DetailSegue", sender: nil)
@@ -77,64 +92,17 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelaga
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { // segue başlamadan önce çalışacak fonksiyon
         if segue.identifier == "eventDetailSegue"{
             let detailViewController = segue.destination as! EventDetailViewController
-            detailViewController.event = self.event
-            
+            if self.event != nil {
+                detailViewController.event = self.event!
+                ds.addQuerySnapshotListener(documentID: event!.id!)
+            }else{
+                print("Clicked event is nil!")
+            }
         }}
         
     
-    
-    @IBAction func eventCellClicked(_ sender: Any) {
-            performSegue(withIdentifier: "eventDetailSegue", sender: nil)
-        
+    @IBAction func eventCellClick(_ sender: Any) {
+        performSegue(withIdentifier: "eventDetailSegue", sender: nil)
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
-
-// delegate methods
-
-    

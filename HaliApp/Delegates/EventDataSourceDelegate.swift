@@ -7,8 +7,12 @@
 
 import Foundation
 
-protocol EventDataSourceDelagate{
+protocol EventDataSourceDelegate{
     func eventListLoaded(eventArr:[Event?])
     func eventLoaded(event: Event?)
+    func eventUpdated(documentID: String?)
+
 }
+
+
 

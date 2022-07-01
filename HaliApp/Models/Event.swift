@@ -14,5 +14,6 @@ struct Event: Codable{
     var name: String
     var hour: String
     var pitch_name: String
-    
+    var attendee_list: [String]
+    var player_quota_left : Int
 }

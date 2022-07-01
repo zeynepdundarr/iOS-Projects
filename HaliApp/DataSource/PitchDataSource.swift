@@ -22,7 +22,7 @@ class PitchDataSource{
         print("db.description: \(db.description)")
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db.collection("pitches2").addDocument(data: [
+        ref = db.collection("pitches").addDocument(data: [
             "pitch_name": "Sariyer Stadyumu",
             "capacity": "11",
             "available_hours": "13:00 - 14:00",

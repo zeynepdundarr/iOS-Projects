@@ -14,6 +14,7 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         let email = "ealtintas17@ku.edu.tr"
         let password = "Hoppala1998"
+        Globals.currentUser = "Ali Sutcu"
         signup(email: email, password: password)
     }
     

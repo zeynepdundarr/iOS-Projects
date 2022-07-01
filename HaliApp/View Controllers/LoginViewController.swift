@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
         
         let email = "ealtintas17@ku.edu.tr"
         let password = "Hoppala1998"
+        Globals.currentUser = "Ali Sutcu"
         login(email: email, password: password)
        
     }

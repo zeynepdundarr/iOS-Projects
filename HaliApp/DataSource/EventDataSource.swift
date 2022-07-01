@@ -11,21 +11,25 @@ import FirebaseFirestore
 
 class EventDataSource{
     
-    var delegate : EventDataSourceDelagate?
+    var delegate : EventDataSourceDelegate?
+    var delegate2: EventDetailDataSourceDelegate?
     @Published var errorMessage: String?
     var event: Event?
     var db: Firestore!
     var eventArr : [Event?] = []
     
-    func saveEventData(){
+    
+    func saveEventData(event: Event?){
         db = Firestore.firestore()
-        print("db.description: \(db.description)")
+
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db.collection("events").addDocument(data: [
-            "name": "Event #4",
-            "hour": "18:00 - 19:00",
-            "pitch_name": "Kadikoy Stadyumu"
+            "name": event!.name,
+            "hour": event!.hour,
+            "pitch_name": event!.pitch_name,
+            "attendee_list": event!.attendee_list,
+            "player_quota_left": event!.player_quota_left
         ]) { err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -46,19 +50,42 @@ class EventDataSource{
               self.eventArr = snapshot.documents.compactMap {
               return try? $0.data(as: Event.self)
             }
-              print("EventArray: \(self.eventArr)")
               DispatchQueue.main.async {
                   self.delegate?.eventListLoaded(eventArr:self.eventArr)
               }
           }
         }
     }
+    // To update age and favorite color:
     
-    func getEventDataWithID(documentId: String) {
+    func updateEventData(event: Event?){
+        
+        if event == nil {
+            print("Event is nil!")
+            return
+        }
+        
+        let documentId = event!.id!
+        db = Firestore.firestore()
+        db.collection("events").document(documentId).updateData([
+            "attendee_list": FieldValue.arrayUnion([Globals.currentUser]),
+            "player_quota_left" : FieldValue.increment(Int64(-1))
+            
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated with ID: \(documentId)")
+            }
+
+        }
+    }
+    
+    func getEventDataWithID(documentID: String) {
         
       db = Firestore.firestore()
-      let docRef = db.collection("events").document(documentId)
-
+      let docRef = db.collection("events").document(documentID)
+      print("after update getting the data again")
       docRef.getDocument { document, error in
         if let error = error as NSError? {
           self.errorMessage = "Error getting document: \(error.localizedDescription)"
@@ -68,7 +95,7 @@ class EventDataSource{
             do {
                 self.event = try document.data(as: Event.self)
                 DispatchQueue.main.async {
-                    self.delegate?.eventLoaded(event:self.event)
+                    self.delegate?.eventLoaded(event: self.event)
                 }
             }
             catch {
@@ -78,6 +105,33 @@ class EventDataSource{
         }
       }
     }
+    
+    func addQuerySnapshotListener(documentID: String){
+        
+        db = Firestore.firestore()
+        db.collection("events").document(documentID)
+            .addSnapshotListener { documentSnapshot, error in
+              guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                return
+              }
+              guard let data = document.data() else {
+                print("Document data was empty.")
+                return
+              }
+              do {
+                  self.event = try document.data(as: Event.self)
+                  print("Delegate2")
+                  DispatchQueue.main.async {
+                      self.delegate2?.eventLoadedDetail(event: self.event)
+                  }
+              }
+              catch {
+                print(error)
+              }
+            }
+    }
+   
 }
 
 

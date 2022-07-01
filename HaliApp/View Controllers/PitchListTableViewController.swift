@@ -52,7 +52,6 @@ class PitchListTableViewController: UITableViewController, PitchDataSourceDelaga
 
 //        cell.textLabel?.text = self.pitchArr[indexPath.row]!.pitch_name
         cell.textLabel?.text = self.TestArr[indexPath.row]
-
         return cell
     }
     

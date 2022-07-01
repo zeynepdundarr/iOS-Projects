@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215C5832286F74C400F19650 /* EventDetailDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C5831286F74C400F19650 /* EventDetailDataSourceDelegate.swift */; };
 		21978BC62861DBBE002FDBD6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21978BC52861DBBE002FDBD6 /* EventDetailViewController.swift */; };
 		21978BC828622DB4002FDBD6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21978BC728622DB4002FDBD6 /* EventDetailTableViewCell.swift */; };
+		21978BCE2862FC74002FDBD6 /* EventBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21978BCD2862FC74002FDBD6 /* EventBrain.swift */; };
+		21A2E29C286D93CB00662EB5 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A2E29B286D93CB00662EB5 /* Globals.swift */; };
 		21D4255D28606A02002E45A4 /* EventListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4255C28606A02002E45A4 /* EventListTableViewController.swift */; };
 		21D4255F28607A98002E45A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4255E28607A98002E45A4 /* Event.swift */; };
 		21D4256128607CFE002E45A4 /* EventDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4256028607CFE002E45A4 /* EventDataSource.swift */; };
@@ -56,8 +59,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		215C5831286F74C400F19650 /* EventDetailDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailDataSourceDelegate.swift; sourceTree = "<group>"; };
 		21978BC52861DBBE002FDBD6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		21978BC728622DB4002FDBD6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
+		21978BCD2862FC74002FDBD6 /* EventBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBrain.swift; sourceTree = "<group>"; };
+		21A2E29B286D93CB00662EB5 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		21D4255C28606A02002E45A4 /* EventListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewController.swift; sourceTree = "<group>"; };
 		21D4255E28607A98002E45A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		21D4256028607CFE002E45A4 /* EventDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataSource.swift; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			children = (
 				21D42562286090AB002E45A4 /* EventDataSourceDelegate.swift */,
 				21D4256C28619663002E45A4 /* PitchDataSourceDelegate.swift */,
+				215C5831286F74C400F19650 /* EventDetailDataSourceDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 		21E5969E285B45D2003D24C9 /* HaliApp */ = {
 			isa = PBXGroup;
 			children = (
+				21978BCD2862FC74002FDBD6 /* EventBrain.swift */,
 				21E596D3285B5803003D24C9 /* GoogleService-Info.plist */,
 				21E5969F285B45D2003D24C9 /* AppDelegate.swift */,
 				21E596A1285B45D2003D24C9 /* SceneDelegate.swift */,
@@ -200,6 +208,7 @@
 				21D425722861970F002E45A4 /* Models */,
 				21D425732861971C002E45A4 /* Delegates */,
 				21978BC928622DC4002FDBD6 /* Cells */,
+				21A2E29B286D93CB00662EB5 /* Globals.swift */,
 			);
 			path = HaliApp;
 			sourceTree = "<group>";
@@ -376,11 +385,14 @@
 				21978BC828622DB4002FDBD6 /* EventDetailTableViewCell.swift in Sources */,
 				21D42565286194E5002E45A4 /* PitchListTableViewController.swift in Sources */,
 				21D4256D28619663002E45A4 /* PitchDataSourceDelegate.swift in Sources */,
+				21A2E29C286D93CB00662EB5 /* Globals.swift in Sources */,
+				215C5832286F74C400F19650 /* EventDetailDataSourceDelegate.swift in Sources */,
 				21E596A4285B45D2003D24C9 /* ViewController.swift in Sources */,
 				21D4255D28606A02002E45A4 /* EventListTableViewController.swift in Sources */,
 				21D4256728619505002E45A4 /* PitchDataSource.swift in Sources */,
 				21978BC62861DBBE002FDBD6 /* EventDetailViewController.swift in Sources */,
 				21D4255F28607A98002E45A4 /* Event.swift in Sources */,
+				21978BCE2862FC74002FDBD6 /* EventBrain.swift in Sources */,
 				21E596D8285C96D6003D24C9 /* SignupViewController.swift in Sources */,
 				21D4256B28619581002E45A4 /* Pitch.swift in Sources */,
 				21E596A0285B45D2003D24C9 /* AppDelegate.swift in Sources */,
