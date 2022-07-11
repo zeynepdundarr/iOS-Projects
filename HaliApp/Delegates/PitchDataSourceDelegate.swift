@@ -9,5 +9,6 @@ import Foundation
 
 protocol PitchDataSourceDelagate{
     func pitchListLoaded(pitchArr:[Pitch?])
+    func pitchListUpdated()
 }
 

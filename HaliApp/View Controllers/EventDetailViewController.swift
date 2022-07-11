@@ -7,12 +7,13 @@
 
 import UIKit
 
-class EventDetailViewController: UIViewController, EventDataSourceDelegate, EventDetailDataSourceDelegate{
+class EventDetailViewController: UIViewController, EventDetailDataSourceDelegate{
 
     
     var event: Event?
     // var ds = Globals.eventDataSource
     var ds = EventDataSource()
+    var ds2 = EventListenerDataSource()
     
     let defaultEvent : Event = Event(id: "defaultID", name: "defaultEvent", hour: "1", pitch_name: "p1", attendee_list: ["defaul_player"], player_quota_left : 1100)
     
@@ -20,52 +21,39 @@ class EventDetailViewController: UIViewController, EventDataSourceDelegate, Even
     @IBOutlet weak var pitchName: UILabel!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var attendee_list: UILabel!
+    @IBOutlet weak var attendee_list_text_view: UITextView!
     @IBOutlet weak var playerQuotaLeft: UILabel!
     
+    @IBOutlet weak var attendee_list_text: UITextField!
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        ds.delegate2 = self
-
+        ds2.delegate = self
+        // no need?
+        ds2.addQuerySnapshotListener(documentID: "8VUqSxq6qJ6P7gwEwVRU")
+        
         if event != nil {
             eventName.text = self.event!.name
             eventHour.text = self.event!.hour
             pitchName.text = self.event!.pitch_name
             playerQuotaLeft.text = String(self.event!.player_quota_left)
-            
-            var str = ""
-            for i in 0..<(self.event!.attendee_list.count-1) {
-                str += (self.event?.attendee_list[i])! + "\n"
-            
-            attendee_list.text = str
-            print("Attendee List: \(str)")
+            attendee_list_text_view.text = get_attendees_list(event: event!)
             }
-        }
     }
     
-    // make event id visible
     @IBAction func AddPlayer(_ sender: Any) {
         print("Add player in EventDetailViewController")
-        ds.updateEventData(event: event)
-  
+        ds.updateEventData(event: self.event)
     }
-    
-        // Fetching data with document id
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    func print_attendees_list(event: Event?) -> String{
-    
+    func get_attendees_list(event: Event) -> String{
+        
         var str = ""
-        for i in 0..<(self.event!.attendee_list.count-1) {
-            str += (self.event?.attendee_list[i])! + "\n"
+        for i in 0..<(event.attendee_list.count) {
+            //print("get_attendees_list: \(self.event!.attendee_list[i])")
+            str += (event.attendee_list[i]) + "\n"
         }
+        print("get_attendees_list str: \(str)")
         return str
     }
     
@@ -73,14 +61,18 @@ class EventDetailViewController: UIViewController, EventDataSourceDelegate, Even
         
     }
     
-    func eventLoadedDetail(event: Event?) {
-        // 1. oncelik bu methoda girsin
-        // 2. oncelik UI yenilensin
-        print("Alo")
-        if event != nil {
-            attendee_list.text = print_attendees_list(event:event!)
-            playerQuotaLeft.text = String(event!.player_quota_left)
-            print("Attention player quota is changed!!!!")
+    func eventLoadedDetail(event2: Event?) {
+        
+        print("EventDetailViewController is called")
+        if event2 != nil {
+            
+            self.event = event2!
+            
+            attendee_list_text_view.text = get_attendees_list(event:event2!)
+        
+            print("EventDetailViewController - attendee_list.text: \(attendee_list_text_view.text!)")
+            playerQuotaLeft.text = String(event2!.player_quota_left)
+            print("EventDetailViewController - player quota left: \(playerQuotaLeft.text)")
         }else{
             print("Error in event loaded EventDetailViewController.")
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		215C5832286F74C400F19650 /* EventDetailDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C5831286F74C400F19650 /* EventDetailDataSourceDelegate.swift */; };
+		215C58342870286500F19650 /* EventListenerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215C58332870286500F19650 /* EventListenerDataSource.swift */; };
 		21978BC62861DBBE002FDBD6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21978BC52861DBBE002FDBD6 /* EventDetailViewController.swift */; };
 		21978BC828622DB4002FDBD6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21978BC728622DB4002FDBD6 /* EventDetailTableViewCell.swift */; };
 		21978BCE2862FC74002FDBD6 /* EventBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21978BCD2862FC74002FDBD6 /* EventBrain.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		215C5831286F74C400F19650 /* EventDetailDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailDataSourceDelegate.swift; sourceTree = "<group>"; };
+		215C58332870286500F19650 /* EventListenerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListenerDataSource.swift; sourceTree = "<group>"; };
 		21978BC52861DBBE002FDBD6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		21978BC728622DB4002FDBD6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		21978BCD2862FC74002FDBD6 /* EventBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBrain.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		21D42571286196FC002E45A4 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				215C58332870286500F19650 /* EventListenerDataSource.swift */,
 				21D4256028607CFE002E45A4 /* EventDataSource.swift */,
 				21D4256628619505002E45A4 /* PitchDataSource.swift */,
 			);
@@ -397,6 +400,7 @@
 				21D4256B28619581002E45A4 /* Pitch.swift in Sources */,
 				21E596A0285B45D2003D24C9 /* AppDelegate.swift in Sources */,
 				21D42563286090AB002E45A4 /* EventDataSourceDelegate.swift in Sources */,
+				215C58342870286500F19650 /* EventListenerDataSource.swift in Sources */,
 				21D4256128607CFE002E45A4 /* EventDataSource.swift in Sources */,
 				21E596A2285B45D2003D24C9 /* SceneDelegate.swift in Sources */,
 			);

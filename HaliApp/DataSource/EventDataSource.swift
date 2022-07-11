@@ -12,12 +12,10 @@ import FirebaseFirestore
 class EventDataSource{
     
     var delegate : EventDataSourceDelegate?
-    var delegate2: EventDetailDataSourceDelegate?
     @Published var errorMessage: String?
     var event: Event?
     var db: Firestore!
     var eventArr : [Event?] = []
-    
     
     func saveEventData(event: Event?){
         db = Firestore.firestore()
@@ -67,15 +65,16 @@ class EventDataSource{
         
         let documentId = event!.id!
         db = Firestore.firestore()
+        print("Globals currentUser in eventDataSource: \(Globals.currentUser)")
         db.collection("events").document(documentId).updateData([
             "attendee_list": FieldValue.arrayUnion([Globals.currentUser]),
-            "player_quota_left" : FieldValue.increment(Int64(-1))
-            
+            "player_quota_left" : FieldValue.increment(Int64(1))
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
                 print("Document successfully updated with ID: \(documentId)")
+                print("QuerySnapshotListener added.")
             }
 
         }
@@ -104,34 +103,7 @@ class EventDataSource{
           }
         }
       }
-    }
-    
-    func addQuerySnapshotListener(documentID: String){
-        
-        db = Firestore.firestore()
-        db.collection("events").document(documentID)
-            .addSnapshotListener { documentSnapshot, error in
-              guard let document = documentSnapshot else {
-                print("Error fetching document: \(error!)")
-                return
-              }
-              guard let data = document.data() else {
-                print("Document data was empty.")
-                return
-              }
-              do {
-                  self.event = try document.data(as: Event.self)
-                  print("Delegate2")
-                  DispatchQueue.main.async {
-                      self.delegate2?.eventLoadedDetail(event: self.event)
-                  }
-              }
-              catch {
-                print(error)
-              }
-            }
-    }
-   
+    }   
 }
 
 

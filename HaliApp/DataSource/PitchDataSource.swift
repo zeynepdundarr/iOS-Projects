@@ -16,25 +16,61 @@ class PitchDataSource{
     var pitch: Pitch?
     var db: Firestore!
     var pitchArr : [Pitch?] = []
- 
-    func savePitchData(){
+    
+    func addQuerySnapshotListenerCollection(){
+        print("In addQuerySnapshotListenerCollection")
+        db = Firestore.firestore()
+        db.collection("pitches").addSnapshotListener { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+            let pitches = documents.map { $0["pitch_name"]! }
+            print("Current pitches: \(pitches)")
+            }
+        DispatchQueue.main.async {
+            self.delegate?.pitchListLoaded(pitchArr:self.pitchArr)
+        }
+//            do {
+//                self.pitchArr = try documents.data(as: [Pitch].self)
+//                DispatchQueue.main.async {
+//                    self.delegate?.pitchListLoaded(pitchArr:self.pitchArr)
+//                }
+//            } catch {
+//                print(error)
+//            }
+    }
+
+
+    
+    
+    
+    func savePitchData(pitch: Pitch?){
         db = Firestore.firestore()
         print("db.description: \(db.description)")
         // Add a new document with a generated ID
         var ref: DocumentReference? = nil
-        ref = db.collection("pitches").addDocument(data: [
-            "pitch_name": "Sariyer Stadyumu",
-            "capacity": "11",
-            "available_hours": "13:00 - 14:00",
-            "pitch_owner_name": "Hasan Yilmaz",
-            "address": "Sariyer/Istanbul"
-        ]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
+        if let pitch = pitch {
+            ref = db.collection("pitches").addDocument(data: [
+                "pitch_name": pitch.pitch_name,
+                "capacity": pitch.capacity,
+                "available_hours": pitch.available_hours,
+                "pitch_owner_name": pitch.pitch_owner_name,
+                "address": pitch.address
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                    DispatchQueue.main.async {
+                        self.delegate?.pitchListUpdated()
+                    }
+                }
             }
+        }else{
+            print("Pitch is empty!")
         }
+        
     }
 
     func getPitchData(){
@@ -48,7 +84,7 @@ class PitchDataSource{
               self.pitchArr = snapshot.documents.compactMap {
               return try? $0.data(as: Pitch.self)
             }
-              print("pitchArray: \(self.pitchArr)")
+              //print("Get pitch data - pitchArray: \(self.pitchArr)")
               DispatchQueue.main.async {
                   self.delegate?.pitchListLoaded(pitchArr:self.pitchArr)
               }

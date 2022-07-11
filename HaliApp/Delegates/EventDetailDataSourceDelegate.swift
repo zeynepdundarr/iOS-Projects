@@ -9,5 +9,5 @@ import Foundation
 
 protocol EventDetailDataSourceDelegate{
   
-    func eventLoadedDetail(event: Event?)
+    func eventLoadedDetail(event2: Event?)
 }

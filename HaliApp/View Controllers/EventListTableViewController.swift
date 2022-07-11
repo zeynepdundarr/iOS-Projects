@@ -16,6 +16,7 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelega
 
     var eventArr : [Event?] = []
     var ds = EventDataSource()
+    var ds2 = EventListenerDataSource()
     var eb = EventBrain()
     var event: Event?
     var db: Firestore!
@@ -39,7 +40,7 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelega
             ]
 
         ds.delegate = self
-        Globals.currentUser = "Dilek Dundar"
+        Globals.currentUser = "Fatima"
         //ds.saveEventData(event: eventData["data"]![0])
         ds.getEventData()
       
@@ -94,7 +95,6 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelega
             let detailViewController = segue.destination as! EventDetailViewController
             if self.event != nil {
                 detailViewController.event = self.event!
-                ds.addQuerySnapshotListener(documentID: event!.id!)
             }else{
                 print("Clicked event is nil!")
             }
