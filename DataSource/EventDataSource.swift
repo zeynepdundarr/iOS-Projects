@@ -88,8 +88,7 @@ class EventDataSource{
       docRef.getDocument { document, error in
         if let error = error as NSError? {
           self.errorMessage = "Error getting document: \(error.localizedDescription)"
-        }
-        else {
+        }else{
           if let document = document {
             do {
                 self.event = try document.data(as: Event.self)

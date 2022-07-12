@@ -109,9 +109,7 @@ class PitchListTableViewController: UITableViewController, PitchDataSourceDelega
     }
     
     func pitchDetailLoaded(pitch: Pitch?) {
-        
+        print("Oops! wrong place!")
     }
-    
-    
-   
+
 }

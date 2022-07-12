@@ -43,8 +43,6 @@ class EventListTableViewController: UITableViewController, EventDataSourceDelega
         Globals.currentUser = "Fatima"
         //ds.saveEventData(event: eventData["data"]![0])
         ds.getEventData()
-      
-   
     }
 
     // MARK: - Table view data source

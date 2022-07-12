@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NnD-tg-VPn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="daw-ka-ZFG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -375,7 +375,7 @@
                                 <color key="tintColor" red="0.83119057070000002" green="0.73284282850000004" blue="0.38309087009999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-zr-mMM" userLabel="Second Box">
-                                <rect key="frame" x="47" y="312.5" width="320" height="479.5"/>
+                                <rect key="frame" x="47" y="312.5" width="320" height="338.5"/>
                                 <color key="backgroundColor" red="0.75755419560000004" green="1" blue="0.70589622139999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="0.38990215880000001" green="0.51269654090000005" blue="0.48092531389999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -386,20 +386,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPy-If-RZQ" id="7oo-Fz-YPM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zO-2R-xsW">
-                                                    <rect key="frame" x="202" y="11" width="80" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Reserve "/>
-                                                    <connections>
-                                                        <action selector="reserveButton:" destination="daw-ka-ZFG" eventType="touchUpInside" id="Ll5-Xj-4ZM"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6zO-2R-xsW" firstAttribute="top" secondItem="7oo-Fz-YPM" secondAttribute="top" constant="11" id="aOk-1p-QKH"/>
-                                                <constraint firstAttribute="trailing" secondItem="6zO-2R-xsW" secondAttribute="trailing" constant="38" id="z4S-G5-Jlh"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -411,6 +397,14 @@
                                     <action selector="dateSelectedFromDatePicker:" destination="daw-ka-ZFG" eventType="valueChanged" id="qev-lG-PtP"/>
                                 </connections>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYg-L0-n0W">
+                                <rect key="frame" x="47" y="720" width="320" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <action selector="addSlotButtonClicked:" destination="daw-ka-ZFG" eventType="touchUpInside" id="59Z-98-tAT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tjE-Ea-y8U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -418,13 +412,16 @@
                             <constraint firstItem="k6o-zr-mMM" firstAttribute="leading" secondItem="Il3-Nh-K0T" secondAttribute="leading" id="0Rd-bw-Vx4"/>
                             <constraint firstItem="cf6-wz-4NV" firstAttribute="top" secondItem="tjE-Ea-y8U" secondAttribute="top" constant="58" id="Cmx-uQ-mqb"/>
                             <constraint firstItem="k6o-zr-mMM" firstAttribute="trailing" secondItem="Il3-Nh-K0T" secondAttribute="trailing" id="E9Q-L5-qsN"/>
-                            <constraint firstItem="tjE-Ea-y8U" firstAttribute="bottom" secondItem="k6o-zr-mMM" secondAttribute="bottom" constant="16" id="SCI-9N-g5Z"/>
+                            <constraint firstItem="tjE-Ea-y8U" firstAttribute="bottom" secondItem="mYg-L0-n0W" secondAttribute="bottom" constant="57" id="Tds-2K-LJ2"/>
                             <constraint firstItem="tjE-Ea-y8U" firstAttribute="trailing" secondItem="cf6-wz-4NV" secondAttribute="trailing" constant="47" id="Xct-P3-Z9a"/>
+                            <constraint firstItem="mYg-L0-n0W" firstAttribute="top" secondItem="k6o-zr-mMM" secondAttribute="bottom" constant="69" id="ZF9-Ql-e8j"/>
                             <constraint firstItem="cf6-wz-4NV" firstAttribute="leading" secondItem="tjE-Ea-y8U" secondAttribute="leading" constant="47" id="cFn-Ah-tSF"/>
                             <constraint firstItem="k6o-zr-mMM" firstAttribute="top" secondItem="Il3-Nh-K0T" secondAttribute="bottom" constant="10" id="cKc-gJ-bds"/>
                             <constraint firstItem="Il3-Nh-K0T" firstAttribute="leading" secondItem="cf6-wz-4NV" secondAttribute="leading" id="ePy-ap-uVU"/>
+                            <constraint firstItem="mYg-L0-n0W" firstAttribute="leading" secondItem="k6o-zr-mMM" secondAttribute="leading" id="gFx-y6-ZLj"/>
                             <constraint firstItem="Il3-Nh-K0T" firstAttribute="top" secondItem="cf6-wz-4NV" secondAttribute="bottom" constant="8" symbolic="YES" id="iZm-Gm-iJf"/>
                             <constraint firstItem="Il3-Nh-K0T" firstAttribute="trailing" secondItem="cf6-wz-4NV" secondAttribute="trailing" id="kVv-tI-mdd"/>
+                            <constraint firstItem="mYg-L0-n0W" firstAttribute="trailing" secondItem="k6o-zr-mMM" secondAttribute="trailing" id="pYp-ZR-33i"/>
                         </constraints>
                     </view>
                     <connections>
@@ -436,7 +433,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGd-kR-BqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="lWE-6W-Ezu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3386.9565217391305" y="1527.4553571428571"/>
+            <point key="canvasLocation" x="3744.9275362318845" y="1188.6160714285713"/>
         </scene>
     </scenes>
     <resources>

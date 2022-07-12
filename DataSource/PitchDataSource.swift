@@ -17,7 +17,7 @@ class PitchDataSource{
     var db: Firestore!
     var pitchArr : [Pitch?] = []
 
-    func addQuerySnapshotListenerCollection(pitch: Pitch?){
+    func addQuerySnapshotListenerCollection(documentID: String? = nil){
         print("In addQuerySnapshotListenerCollection")
         db = Firestore.firestore()
         db.collection("pitches").addSnapshotListener { querySnapshot, error in
@@ -25,23 +25,15 @@ class PitchDataSource{
                     print("Error fetching documents: \(error!)")
                     return
                 }
-        
         let pitches = documents.compactMap{ queryDocumentSnapshot -> Pitch? in
             return try? queryDocumentSnapshot.data(as: Pitch.self)
          }
-            
         if pitches != nil  {
-        DispatchQueue.main.async {
-            // TODO: get a pitch by doc id
-            print("addQuerySnapshotListenerCollection passes to delegate!")
-         self.delegate?.pitchDetailLoaded(pitch:self.pitch)
-            }
-        }else{
-            print("Pitches can not be updated!")
+            print("Query snapshot update detected, transferring modified pitch!")
+            self.getPitchDataWithID(documentID: documentID!)
         }
+      }
     }
-
-}
     
     
     
@@ -74,7 +66,6 @@ class PitchDataSource{
     }
 
     func getPitchData(){
-        
         db = Firestore.firestore()
         db.collection("pitches").getDocuments { (snapshot, error) in
           if let error = error {
@@ -84,7 +75,6 @@ class PitchDataSource{
               self.pitchArr = snapshot.documents.compactMap {
               return try? $0.data(as: Pitch.self)
             }
-              //print("Get pitch data - pitchArray: \(self.pitchArr)")
               DispatchQueue.main.async {
                   self.delegate?.pitchListLoaded(pitchArr:self.pitchArr)
               }
@@ -92,41 +82,67 @@ class PitchDataSource{
         }
     }
        
-    func updatePitchData(pitch: Pitch?, reservedSlot: String){
+    func removeSlotAndUpdatePitch(documentID: String, reservedSlot: String){
         
-        if pitch == nil {
+        if documentID == nil {
             print("Pitch is nil!")
             return
         }
-    
-        let documentId = pitch!.id!
         let db = Firestore.firestore()
-        db.collection("pitches").document(documentId).updateData([
+        db.collection("pitches").document(documentID).updateData([
             "available_hours": FieldValue.arrayRemove([reservedSlot])
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
-                print("Document successfully updated with ID: \(documentId)")
+                print("Document successfully updated with ID: \(documentID)")
             }
 
         }
     }
     
-// TO DO
-//    func getPitchData2() {
-//
-//      db = Firestore.firestore()
-//      db.collection("pitches").addSnapshotListener { (querySnapshot, error) in
-//        guard let documents = querySnapshot?.documents else {
-//            print("No documents")
-//          return
-//        }
-//        self.pitchArr = documents.compactMap { queryDocumentSnapshot -> Pitch in
-//            return try queryDocumentSnapshot.data(as: Pitch.self)
-//        }
-//      }
-//    }
+    func getPitchDataWithID(documentID: String) {
+        
+      db = Firestore.firestore()
+      let docRef = db.collection("pitches").document(documentID)
+      docRef.getDocument { document, error in
+        if let error = error as NSError? {
+          self.errorMessage = "Error getting document: \(error.localizedDescription)"
+        }
+        else {
+          if let document = document {
+            do {
+                self.pitch = try document.data(as: Pitch.self)
+                DispatchQueue.main.async {
+                    print("getPitchDataWithID is successful!")
+                    self.delegate?.pitchDetailLoaded(pitch: self.pitch)
+                }
+            }
+            catch {
+              print(error)
+            }
+          }
+        }
+      }
+    }
+    
+    func addSlotAndUpdatePitch(documentID: String, newSlot: String){
+        if documentID == nil {
+            print("Pitch is nil!")
+            return
+        }
+        let db = Firestore.firestore()
+        db.collection("pitches").document(documentID).updateData([
+            "available_hours": FieldValue.arrayUnion([newSlot])
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated with ID: \(documentID)")
+            }
+
+        }
+    }
 }
 
 
