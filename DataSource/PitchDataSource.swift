@@ -46,7 +46,7 @@ class PitchDataSource{
             ref = db.collection("pitches").addDocument(data: [
                 "pitch_name": pitch.pitch_name,
                 "capacity": pitch.capacity,
-                "available_hours": pitch.available_hours,
+                "available_hours": pitch.available_date_and_hours,
                 "pitch_owner_name": pitch.pitch_owner_name,
                 "address": pitch.address
             ]) { err in

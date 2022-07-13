@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Utils{
+    
+    func saveDateAndHoursToPitch(){
+        
+    }
+}

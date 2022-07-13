@@ -19,28 +19,19 @@ class PitchDateDetailViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         ds.delegate = self
-        // uncomment when you pass pitch successfully
-//        if let pitch = pitch{
-//            self.available_hours = pitch.available_hours
-//            print("PitchDateDetailViewController - checking PITCH:  \(self.pitch)")
-//            print("Checking with mock doc id:")
-//            ds.addQuerySnapshotListenerCollection(documentID: "BQr2ojG3eMDl0pz5Yf8G")
-//        }else{
-//            print("Pitch is empty!")
-//        }
-        
-        // try
-        print("Checking with mock doc id:")
-        ds.addQuerySnapshotListenerCollection(documentID:"BQr2ojG3eMDl0pz5Yf8G")
-        // try
-        
+
+        if let pitch = pitch{
+            self.available_hours = pitch.available_date_and_hours
+            ds.addQuerySnapshotListenerCollection(documentID: pitch.id)
+        }else{
+            print("Pitch is empty!")
+        }
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         DateLabel.text = dateFormatter.string(from: DatePicker.date)
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
-        // Do any additional setup after loading the view.
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,18 +56,13 @@ class PitchDateDetailViewController: UIViewController, UITableViewDataSource, UI
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("This row is selected!")
         let reservedSlot = self.available_hours[indexPath.row]
-        ds.removeSlotAndUpdatePitch(documentID: "BQr2ojG3eMDl0pz5Yf8G", reservedSlot: reservedSlot)
+         ds.removeSlotAndUpdatePitch(documentID: self.pitch!.id!, reservedSlot: reservedSlot)
      }
-    
     
     @IBAction func dateSelectedFromDatePicker(_ : AnyObject){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         DateLabel.text = dateFormatter.string(from: DatePicker.date)
-        print("A date is selected")
-        print("And removing from pitch_id: \(self.pitch!.id)")
-        print("Removing slots: 17:00 - 18:00")
-
     }
     
     // delegate
@@ -90,14 +76,18 @@ class PitchDateDetailViewController: UIViewController, UITableViewDataSource, UI
     
     func pitchDetailLoaded(pitch: Pitch?){
         print("PitchDateDetailViewController - pitch is: \(pitch)")
-        print("PitchDateDetailViewController - new available_hours: \(pitch!.available_hours)")
-        self.available_hours = pitch!.available_hours
+        print("PitchDateDetailViewController - new available_hours: \(pitch!.available_date_and_hours)")
+        self.available_hours = pitch!.available_date_and_hours
         tableView.reloadData()
     }
 
     @IBAction func addSlotButtonClicked(_ sender: Any) {
-        ds.addSlotAndUpdatePitch(documentID: "BQr2ojG3eMDl0pz5Yf8G", newSlot: "23:00 - 24:00")
+        
+        if let pitch = self.pitch{
+            ds.addSlotAndUpdatePitch(documentID: self.pitch!.id!, newSlot: "23:00 - 24:00")
+        }
     }
+    
 }
 
 

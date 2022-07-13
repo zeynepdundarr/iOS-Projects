@@ -15,24 +15,24 @@ class PitchListTableViewController: UITableViewController, PitchDataSourceDelega
 
     var pitchArr: [Pitch?] = [Pitch(pitch_name:"Pitch #1",
                                     capacity: 11,
-                                    available_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
+                                    available_date_and_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
                                     pitch_owner_name: "Ahmet Yilmaz", address: "Zekeriyakoy - Istanbul")]
     
     var TestArr = ["a","b","c"]
     var pitchData :  [String: [Pitch]] = ["data":
         [Pitch(pitch_name:"Pitch #1",
                capacity: 11,
-               available_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
+               available_date_and_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
                pitch_owner_name: "Ahmet Yilmaz",
                address: "Zekeriyakoy - Istanbul"),
          Pitch(pitch_name:"Pitch #2",
                 capacity: 11,
-                available_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
+                available_date_and_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
                 pitch_owner_name: "MEhmet Yilmaz",
                 address: "Moda - Istanbul"),
          Pitch(pitch_name:"Pitch #3",
                 capacity: 11,
-                available_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
+                available_date_and_hours: ["17:00 - 18:00","18:00 - 19:00","20:00 - 21:00", "22:00 - 23:00"],
                 pitch_owner_name: "Salih Yilmaz",
                 address: "Besiktas - Istanbul")]]
     

@@ -14,7 +14,7 @@ struct Pitch: Codable{
     
     var pitch_name: String
     var capacity: Int
-    var available_hours: [String]
+    var available_date_and_hours: [String]
     var pitch_owner_name: String
     var address: String
     
